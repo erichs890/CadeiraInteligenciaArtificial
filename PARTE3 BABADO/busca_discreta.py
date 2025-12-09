@@ -125,7 +125,7 @@ class LocalRandomSearch:
     
     def perturb(self):
         x_cand = np.copy(self.x_opt)
-        indexes1 = (np.random.permutation(self.qtd - 1)+1)[:self.epsilon]
+        indexes1 = (np.random.permutation(self.qtd - 1)+1)[:self.epsilon] #
         indexes2 = np.random.permutation(indexes1)
         x_cand[indexes1] = x_cand[indexes2]
         return x_cand
@@ -150,7 +150,7 @@ class LocalRandomSearch:
         plt.title('LRS histórico')
         plt.show()
 
-class simulated_annealing:
+class simulated_annealing: 
     def __init__(self, max_it, points):
         self.max_it = max_it
         self.points = points
@@ -191,9 +191,10 @@ class simulated_annealing:
             p2 = self.points[x[(i+1)%self.qtd]]
             d+= np.sqrt((p1[0]-p2[0])**2 + (p1[1]-p2[1])**2)
         return d
+    
     def perturb(self):
         x_cand = np.copy(self.x_opt)
-        indexes1 = (np.random.permutation(self.qtd - 1)+1)[:3]
+        indexes1 = (np.random.permutation(self.qtd - 1)+1)[:3] 
         indexes2 = np.random.permutation(indexes1)
         x_cand[indexes1] = x_cand[indexes2]
         return x_cand

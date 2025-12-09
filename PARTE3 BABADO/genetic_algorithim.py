@@ -117,3 +117,5 @@ class GeneticAlgorithm:
 
 ga = GeneticAlgorithm()
 ga.evolve()
+
+
